@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Message{% endblock title %}
+
+{% block specific %}
+<section class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h2 class="panel-title" >Received message</h2>
+        </div>
+        <div class="panel-body">
+            <p>Subject: {{ message.subject}}</p>
+            <p>Send by: {{ message.sender }}</p>
+            <p>Message: {{ message.content }}</p>
+        </div>
+        <div class="panel-footer clearfix">
+            <div class="pull-right">
+                <a class="btn btn-primary" href="/message/{{ message.key.id() }}/reply"> Reply</a>
+                <a class="btn btn-primary" href="/message/{{ message.key.id() }}/delete"> Delete</a>
+                <a class="btn btn-primary" href="/sent_mail"> Inbox</a>
+                <a href="/" class="btn btn-default">Go Back</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock specific %}

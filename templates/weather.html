@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Weather{% endblock title %}
+
+
+{% block specific %}
+
+<div class="container">
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h2 class="panel-title">Weather in London</h2>
+                <h5>Information is coming from OpenWeatherMap</h5>
+            </div>
+            <div class="panel-body">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Parameters:</th>
+                        <th>Value:</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Temperature:</td>
+                        <td>{{ podatki.main.temp }} degrees C</td>
+                    </tr>
+                    <tr>
+                        <td>Description:</td>
+                        <td>{{ podatki.weather[0].description }}</td>
+                    </tr>
+                    <tr>
+                        <td>Pressure:</td>
+                        <td>{{ podatki.main.pressure }} hPa</td>
+                    </tr>
+                    <tr>
+                        <td>Humidity:</td>
+                        <td>{{ podatki.main.humidity }}</td>
+                    </tr>
+                    <tr>
+                        <td>Wind speed:</td>
+                        <td>{{ podatki.wind.speed }} meter/sec</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="panel-footer clearfix">
+                <div class="pull-right">
+                    <button onclick="goBack()" class="btn btn-default"> Go Back</button>
+                </div>
+            </div>
+            <script>
+            function goBack() {
+                window.history.back();
+            }
+            </script>
+        </div>
+    </div><!--/Container-->
+{% endblock specific %}

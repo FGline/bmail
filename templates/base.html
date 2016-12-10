@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}bMail{% endblock title %}</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+         <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="navbar navbar-inverse navbar-static-top">
+    <a href="/" class="navbar-brand col-sm-4">BMail</a>
+    <ui class="nav navbar-nav navbar-right col-sm-5">
+        <li class="active"><a href="/message"><span class="glyphicon glyphicon-send" ></span> New Message</a></li>
+        <li ><a href="/received"><span class="glyphicon glyphicon-inbox"></span> Inbox</a></li>
+        <li><a href="/sent_mail"><span class="glyphicon glyphicon-envelope"></span> Sent Mail</a></li>
+        <li><a href="/"><span class="glyphicon glyphicon-wi-day-cloudy"></span> Weather</a></li>
+        <li><a href="/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+    </ui>
+</div>
+
+{% block specific %}
+{% endblock specific %}
+<!--Bottom navigation-->
+
+	<div class="navbar navbar-default navbar-fixed-bottom">
+		<div class="container">
+			<p class="navbar-text pull-left">Site build by FG Jr.</p>
+			<a href="http://www.smartninja.org" class="navbar-btn btn-success btn pull-right">SmartNinja</a>
+		</div>
+	</div>
+</body>
+</html>

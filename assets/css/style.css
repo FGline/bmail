@@ -1,0 +1,42 @@
+
+body {
+    background-color: #f7eded;
+    text-align: center;
+}
+.input-group {
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+}
+.navbar-brand {
+	font-family: "Oswald", sans-serif;
+	letter-spacing: 15px;
+	font-size: 22px;
+}
+
+.navbar-nav{
+	font-size: 13px;
+	margin-right: 50px;
+}
+
+#narform{
+	height: 100px;
+}
+.send-content{
+	height: 100px;
+}
+
+.list-group{
+		width: 200px;
+
+}
+.hello-list-group{
+    margin: 20px;
+    margin-left: 70px;
+}
+.hello-list-group-right{
+    margin: -180px;
+    margin-right: 70px;
+}

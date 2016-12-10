@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Delete message{% endblock title %}
+
+{% block specific %}
+	<div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h2 class="panel-title" data-target="#squ1">Delete message</h2>
+            </div>
+            <div class="panel-body">
+                <h3>Do you really want to delete this message?</h3>
+                <p>Message: {{ message.subject }}</p>
+            </div>
+            <div class="panel-footer clearfix">
+                <div class="pull-right">
+                    <form action="/message/{{ message.key.id() }}/delete" method="post">
+                        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-remove"></span> Yes</button>
+                        <button onclick="goBack()" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span> No</button>
+                    </form>
+                    <br>
+                </div>
+            </div>
+            <script>
+            function goBack() {
+                window.history.back();
+            }
+            </script>
+        </div>
+    </div><!--/Container-->
+{% endblock specific %}

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}New message{% endblock title %}
+
+
+{% block specific %}
+<div class="container">
+    <form action="/message" method="post">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h2 class="panel-title">Send message</h2>
+            </div>
+            <div class="panel-body" >
+
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">To:</span>
+                    <input type="email" class="form-control" aria-describedby="basic-addon1" name="recipient" required>
+                </div>
+            <br/>
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon2">Subject:</span>
+                    <input type="text" class="form-control" aria-describedby="basic-addon2" name="subject">
+                </div>
+                <br/>
+            <div class="input-group input-group-lg">
+                <span class="input-group-addon" id="basic-addon2>Message:</span>
+                <input type="text" class="form-control" style="height: 100px" aria-describedby="basic-addon3" name="content">
+            </div>
+            <br/>
+        </div>
+        <div class="panel-footer clearfix">
+            <div class="pull-right">
+                <button type="submit" class="btn btn-primary"> Send</button>
+                <button href="/" class="btn btn-default"> Go Back</button>
+
+        </div>
+        </div></div>
+
+    </form>
+</div>
+{% if content %}
+    <div class="alert alert-success fade in">
+        <a  class="close" data-dismiss="alert">&times;</a>
+        <strong>Success!</strong> Your message has been sent successfully.
+        <a href="/" class="btn btn-primary"><span class="glyphicon glyphicon-home"></span>Home</a>
+        <a href="/sent_mail" class="btn btn-primary"><span class="glyphicon glyphicon-inbox"></span> Inbox</a>
+
+    </div>
+
+{% endif %}
+
+{% endblock specific %}

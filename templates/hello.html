@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Home pagege{% endblock title %}
+{% block specific %}
+
+{% if logiran %}
+{% else %}
+
+    <h5>Hello stranger! Please login. </h5>
+
+{% endif %}
+<div container>
+    <div class="hello-list-group">
+        <ul class="list-group">
+            <a href="/message" class="list-group-item">New massage</a>
+            <a href="/received" class="list-group-item">Inbox</a>
+            <a href="/sent_mail" class="list-group-item">Sent Mail</a>
+            <a href="/weather" class="list-group-item">Weather</a>
+        </ul>
+    </div>
+    <div class="hello-list-group-right">
+        <ul class="list-group pull-right">
+            {% if logiran %}
+            <li class="list-group-item"><span class="glyphicon glyphicon-user-mark"></span> Hello {{ user.nickname() }}</li>
+            <li class="list-group-item"><a href="{{ logout_url }}"><span class="glyphicon glyphicon-log-out"></span>  LOG-OUT</a></li>
+            {% else %}
+            <li class="list-group-item"><a href="{{ login_url }}"><span class="glyphicon glyphicon-log-in"></span>  LOG-IN</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</div>
+
+
+
+
+{% endblock specific %}
+<!--Bottom navigation-->
